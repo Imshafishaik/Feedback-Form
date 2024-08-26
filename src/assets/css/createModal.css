@@ -1,0 +1,42 @@
+.feedback_form_modal{
+    display: flex;
+    flex-direction: column;
+}
+
+.create_cancel_btns{
+    display: flex;
+    justify-content: end;
+}
+
+.create_feedback_form h4{
+    margin-top: 20px;
+}
+
+.feedbackmodal{
+    min-width: 400px;
+}
+
+.feedback_form_modal input[type="text"]{
+    border: none;
+    border-bottom: 1px solid #111;
+    outline: none;
+}
+
+.create_cancel_btns{
+    margin-top: 25px;
+}
+
+.create_cancel_btns button:nth-child(1){
+    border: none;
+    background-color: transparent;
+    margin-right: 5px;
+    color: rgb(96, 156, 96);
+    outline: none;
+}
+
+.create_cancel_btns button:nth-child(2){
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    outline: none;
+}

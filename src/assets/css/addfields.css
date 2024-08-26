@@ -1,0 +1,136 @@
+.add_fields_comp{
+    width: 317px;
+    box-shadow: 0px 1px 7px #ccc;
+    padding: 20px;
+}
+
+.add_fields_comp_blk h5{
+    margin-bottom: 20px;
+}
+
+.fields_sec{
+    display: flex;
+    justify-content: space-between;
+}
+
+.fields_left_blk{
+    display: flex;
+}
+
+.url_condition input[type="text"]{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #111;
+    width: 100%;
+}
+
+.url_condition{
+    margin: 40px 0;
+}
+
+.toggle {
+    position : relative ;
+    display : inline-block;
+    width: 42px;
+    height: 18px;
+    background-color: #adceff;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px 0 rgba(90, 86, 149, 0.08)
+  }
+       
+  .toggle:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #5599ff;
+    top: -3px; 
+    left: 0px;
+    transition:  all 0.5s;
+  }
+       
+  .checkbox:checked + .toggle::after {
+    left : 17px; 
+  }
+       
+  .checkbox:checked + .toggle {
+    background-color: #adceff;
+  }
+       
+  .checkbox { 
+    display : none;
+  }
+
+  .push_toggle {
+    position : relative ;
+    display : inline-block;
+    width: 42px;
+    height: 18px;
+    background-color: #adceff;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px 0 rgba(90, 86, 149, 0.08)
+  }
+       
+  .push_toggle:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #5599ff;
+    top: -3px; 
+    left: 0px;
+    transition:  all 0.5s;
+  }
+       
+  .push_checkbox:checked + .push_toggle::after {
+    left : 17px; 
+  }
+       
+  .push_checkbox:checked + .push_toggle {
+    background-color: #adceff;
+  }
+       
+  .push_checkbox { 
+    display : none;
+  }
+
+  .specific_toggle {
+    position : relative ;
+    display : inline-block;
+    width: 42px;
+    height: 18px;
+    background-color: #adceff;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px 0 rgba(90, 86, 149, 0.08)
+  }
+       
+  .specific_toggle:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #5599ff;
+    top: -3px; 
+    left: 0px;
+    transition:  all 0.5s;
+  }
+       
+  .specific_checkbox:checked + .specific_toggle::after {
+    left : 17px; 
+  }
+       
+  .specific_checkbox:checked + .specific_toggle {
+    background-color: #adceff;
+  }
+       
+  .specific_checkbox { 
+    display : none;
+  }
+
+  .url_checkbox{
+    display: flex;
+    justify-content: space-between;
+  }
