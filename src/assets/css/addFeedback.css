@@ -8,6 +8,10 @@
     border-top-right-radius: 8px;
 }
 
+.add_feedback_header h4{
+    margin: 0 0 0 10px;
+}
+
 .add_feedback_body{
     display: flex;
     justify-content: space-between;

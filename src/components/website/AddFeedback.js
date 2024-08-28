@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import '../assets/css/addFeedback.css';
+import '../../assets/css/addFeedback.css';
 import { useLocation, useParams } from 'react-router-dom';
-import Header from './Header';
+import Header from '../Header';
 import { MdEdit } from "react-icons/md";    
-import { capitalizeFirstLetterOfEachWord } from '../utils/commonFuntions';
-import AddFields from './AddFields';
+import { capitalizeFirstLetterOfEachWord } from '../../utils/commonFuntions';
+import AddFields from '../AddFields';
 import { FaChevronLeft } from "react-icons/fa6";
-import CreateModal from './CreateModal';
-import { Categories, NumericRating, RadioButton, SingleLineInput, SmileyRating, StarRating, TextAreaRating } from '../utils/inputFunctions';
-import "../assets/css/inputFunctions.css";
+import CreateModal from '../CreateModal';
+import { Categories, NumericRating, RadioButton, SingleLineInput, SmileyRating, StarRating, TextAreaRating } from '../../utils/inputFunctions';
+import "../../assets/css/inputFunctions.css";
 
-const AddFeedback = () => {
+const AddFeedback = (props) => {
     const location = useLocation()
     const params = new URLSearchParams(location.search)
     const [newFormModal,setNewFormModal] = useState(false)
@@ -66,7 +66,7 @@ const AddFeedback = () => {
             <div></div>
             <div className='add_feedback_fields_blk'>
                 <div className="add_feedback_header">
-                    <FaChevronLeft size={20} /><h4>{capitalizeFirstLetterOfEachWord(params.get('feedback_name'))}</h4> <MdEdit onClick={()=>setNewFormModal(true)} size={20} />
+                    <FaChevronLeft size={20} /><h4>{capitalizeFirstLetterOfEachWord(props.feedbackName)}</h4> <MdEdit onClick={()=>setNewFormModal(true)} size={20} />
                 </div>
                 <div>
                     {fieldsToBeRender?.map((field, i)=>{

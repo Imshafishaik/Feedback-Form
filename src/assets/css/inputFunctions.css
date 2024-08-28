@@ -8,6 +8,7 @@
     height: 106px;
     width: 95%;
     margin: 10px;
+    font-size: 16px;
 }
 
 .text_area p{
@@ -54,10 +55,27 @@
     padding: 10px 0 0 10px;
 }
 
+.active_star{
+    color: #5578F4;
+}
+
+.not_active_star{
+    color: #8E8E8E;
+}
+
 .number_ratings{
     display: flex;
     justify-content: center;
     margin: 10px 0;
+}
+
+.selected_number_rating{
+    border: 1px solid #ccc;
+    padding: 7px 18px;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #5578F4;
+    color: #fff;
 }
 
 .star_ratings{
@@ -66,13 +84,20 @@
     margin: 10px;
 }
 
-.star_imgs{
+.active_star_imgs{
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    border: 1px solid #5578F4;
+}
+
+.not_active_star_imgs{
     height: 40px;
     width: 40px;
     margin-right: 10px;
 }
 
-.edit_delete_btns{
+.edits_delete_btns{
     display: flex;
     justify-content: end;
     gap: 20px;
@@ -95,6 +120,7 @@
     justify-content: center;
     border-radius: 4px;
     height: 40px;
+    font-size: 16px;
 }
 
 .radio_buttons{
@@ -122,7 +148,15 @@
     margin: 10px;
 }
 
-.category{
+.active_category{
+    border: 1px solid #5578F4;
+    padding: 10px 40px;
+    font-size: 14px;
+    background-color: #5578F4;
+    color: #fff;
+}
+
+.not_active_category{
     border: 1px solid #ccc;
     padding: 10px 40px;
     font-size: 14px;

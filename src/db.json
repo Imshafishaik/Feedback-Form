@@ -1,0 +1,61 @@
+{
+  "feedback_data": [
+    {
+      "feedback_name": "Smart Work",
+      "todays_date": "28/08/2024",
+      "id": 5
+    },
+    {
+      "feedback_name": "shafi",
+      "todays_date": "28/08/2024",
+      "id": 6
+    },
+    {
+      "feedback_name": "shafi",
+      "todays_date": "29/08/2024",
+      "id": 7
+    },
+    {
+      "feedback_name": "shafi",
+      "todays_date": "29/08/2024",
+      "id": 8
+    },
+    {
+      "feedback_name": "shafi",
+      "todays_date": "29/08/2024",
+      "id": 9
+    },
+    {
+      "feedback_name": "fkjds",
+      "todays_date": "29/08/2024",
+      "id": 10
+    }
+  ],
+  "feedback_details": [
+    {
+      "id": 1,
+      "numeric_rating_heading": "How likely is it that you will recommend us to your family and friends?",
+      "number_rating": 5,
+      "textarea_rating_heading": "Would you like to add a comment",
+      "textarea_rating": "Hello your website is so smooth to use",
+      "star_rating_heading": "Give a star rating for the website",
+      "star_rating": 3,
+      "smiley_rating_heading": "What is your opinion of this page?",
+      "smiley_rating": 4,
+      "single_line_input_heading": "Do you have any suggestions to improve our website?",
+      "single_line_input": "Great website",
+      "radio_rating_heading": "Multiple choice-1 answer",
+      "radio_rating": "Radio 1",
+      "bug_rating_heading": "Pick a subject and provide your feedback:",
+      "bug_rating": "Bug"
+    },
+    {
+      "numeric_rating_heading": "How likely is it that you will recommend us to your family and friends?",
+      "number_rating": 6,
+      "textarea_rating_heading": "Would you like to add a comment",
+      "textarea_rating": "saldslfds",
+      "todays_date": "29/08/2024",
+      "id": 2
+    }
+  ]
+}

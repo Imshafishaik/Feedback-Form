@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/css/addfields.css';
 import { BsTextareaResize } from "react-icons/bs";
 import { RiAddLargeLine } from 'react-icons/ri';
@@ -8,26 +8,50 @@ import { PiTextboxThin } from "react-icons/pi";
 import { CiBoxList } from "react-icons/ci";
 import { TbCategoryMinus } from "react-icons/tb";
 
-const AddFields = () => {
+const AddFields = (props) => {
+
   return (
     <div className='add_fields_comp_blk'>
       <h5>Add fields</h5>
       <div className='all_fields_blk'>
-        <div className='fields_sec'>
+        <div className='fields_sec' 
+        onClick={()=>props.setFieldsToBeRender((prev)=>{
+          if(prev.includes("TextAreaRating")){
+            return [...prev];
+          }else{
+            return [...prev,"TextAreaRating"]
+          }
+        })}
+          >
             <div className='fields_left_blk'>
                 <BsTextareaResize style={{marginRight:20}} size={20} />
                 <p>Textarea </p>
             </div>
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={()=>props.setFieldsToBeRender((prev)=>{
+          if(prev.includes("NumericRating")){
+            return [...prev];
+          }else{
+            return [...prev,"NumericRating"]
+          }
+        })
+        }>
             <div className='fields_left_blk'>
                 <TiSortNumericallyOutline style={{marginRight:20}} size={20} />
                 <p>Numeric rating </p>
             </div>
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={
+          ()=>props.setFieldsToBeRender((prev)=>{
+            if(prev.includes("StarRating")){
+              return [...prev];
+            }else{
+              return [...prev,"StarRating"]
+            }
+          })
+          }>
             <div className='fields_left_blk'>
                 <FaRegStar style={{marginRight:20}} size={20} />
                 <p>Star rating </p>
@@ -35,7 +59,13 @@ const AddFields = () => {
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
 
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={()=>props.setFieldsToBeRender((prev)=>{
+            if(prev.includes("SmileyRating")){
+              return [...prev];
+            }else{
+              return [...prev,"SmileyRating"]
+            }
+          })}>
             <div className='fields_left_blk'>
                 <FaRegSmile style={{marginRight:20}} size={20} />
                 <p>Smiley rating </p>
@@ -43,7 +73,13 @@ const AddFields = () => {
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
 
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={()=>props.setFieldsToBeRender((prev)=>{
+            if(prev.includes("SingleLineInput")){
+              return [...prev];
+            }else{
+              return [...prev,"SingleLineInput"]
+            }
+          })}>
             <div className='fields_left_blk'>
                 <PiTextboxThin style={{marginRight:20}} size={20} />
                 <p>Single line input </p>
@@ -51,7 +87,14 @@ const AddFields = () => {
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
 
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={()=>props.setFieldsToBeRender((prev)=>{
+            if(prev.includes("RadioButton")){
+              return [...prev];
+            }else{
+              return [...prev,"RadioButton"]
+            }
+          })
+          }>
             <div className='fields_left_blk'>
                 <CiBoxList style={{marginRight:20}} size={20} />
                 <p>Radio button </p>
@@ -59,7 +102,15 @@ const AddFields = () => {
             <RiAddLargeLine size={20} color='#2F4ED7' />
         </div>
 
-        <div className='fields_sec'>
+        <div className='fields_sec' onClick={
+          ()=>props.setFieldsToBeRender((prev)=>{
+            if(prev.includes("Categories")){
+              return [...prev];
+            }else{
+              return [...prev,"Categories"]
+            }
+          })
+          }>
             <div className='fields_left_blk'>
                 <TbCategoryMinus style={{marginRight:20}} size={20} />
                 <p>Categories </p>

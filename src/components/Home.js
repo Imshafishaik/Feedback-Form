@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { RiAddLargeLine } from "react-icons/ri";
 import "../assets/css/home.css";
 import { TfiAgenda } from "react-icons/tfi";
 import CreateModal from './CreateModal';
-import feedbackData from "../Feedbackdata.json";
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
 
   const [newFormModal,setNewFormModal] = useState(false)
+  const [feedbackData,setFeedbackData] = useState()
+  console.log(".........feedbackData 111",feedbackData);
+
+  const navigate = useNavigate()
+  useEffect(()=>{
+    // localStorage.setItem('feedback_data',JSON.stringify([
+    //   {
+    //     "feedback_id": "1", 
+    //     "feedback_name": "Customer Service",
+    //     "submitted": "10",
+    //     "viewed": "55",
+    //     "date_published": "8/8/2024"
+    // }
+    // ]))
+    fetch('http://localhost:5000/feedback_data')
+      .then((response) => response.json())
+      .then((data) => setFeedbackData(data));
+    // setFeedbackData(JSON.parse(localStorage.getItem('feedback_data') || "[]"))
+  },[])
+
+  
 
   return (
     <div className='alter_home'>
@@ -19,14 +40,17 @@ const Home = () => {
         <RiAddLargeLine size={60} color='#2F4ED7' />
         New form
       </div>
-      <div className='feedback_list'>
+      {/* {feedbackData != undefined && <> */}
+      {feedbackData?.map((obj,i)=>{
+      return <div className='feedback_list'>
         <div className='feedback_header'>
           <div className='feedback_header_icn'>
             <TfiAgenda size={20} color='#989BC8' />
           </div>
         </div>
-        {feedbackData?.feedback_data?.map((obj,i)=>{
-          return <>
+        <div className='shafi'></div>
+        
+           <>
             <div className='feedback_details'>
             <h3>{obj?.feedback_name}</h3>
             <div className='submit_data'>
@@ -40,11 +64,11 @@ const Home = () => {
 
             <div className='date_data'>
               <p>Date Published</p>
-              <span>{obj?.date_published}</span>
+              <span>{obj?.todays_date}</span>
             </div>
           </div>
           <div className='submission_btn'>
-          <button type='button'>
+          <button type='button' onClick={()=>navigate(`/view-submission?feedback_name=${obj?.feedback_name}&created_date=${obj?.todays_date}`)}>
             VIEW SUBMISSION
           </button>
           </div>
@@ -53,10 +77,13 @@ const Home = () => {
             <button type='button'>DELETE</button>
           </div>
           </>
-        })}
+        
         
         </div>
+        })}
+        {/* </>} */}
       </div>
+      
       </div>
   )
 }

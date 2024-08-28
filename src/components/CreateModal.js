@@ -1,21 +1,45 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CommonModal from '../common/commonModal';
 import "../assets/css/createModal.css";
-import feedbackData from "../Feedbackdata.json";
 import { useNavigate } from 'react-router-dom';
+import { formatDate } from '../utils/commonFuntions';
 
 const CreateModal = (props) => {
 
-  const [feedbackName,setFeedbackName] = useState({})
+  const [feedbackName,setFeedbackName] = useState()
+  const [feedbackPost,setFeedbackPost] = useState()
 
   const navigate = useNavigate()
-  console.log("...........feedbackName",feedbackName);
+
   const handleCreateClick=()=>{
-    if(feedbackName != undefined) {
-      // feedbackData?.feedback_data?.push(feedbackName)
+    const date = new Date()
+    let today = formatDate(date)
+    let feed_back_name = {
+      "feedback_name": feedbackName,
+      "todays_date": today
+    }
+    fetch("http://localhost:5000/feedback_data",
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(feed_back_name)
+    }).then(response => response.json())
+    .then(data => {
+      setFeedbackPost(data);
+      // Optionally, you can update the state to include the new post
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+
+  useEffect(()=>{
+    if(feedbackPost){
       navigate(`/add-feedback?feedback_name=${feedbackName}`)
     }
-  }
+  },[feedbackPost])
 
   return (
     <CommonModal 
